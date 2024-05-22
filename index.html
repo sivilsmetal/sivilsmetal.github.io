@@ -26,18 +26,35 @@
             <p class="lead">
                 <a class="btn btn-primary btn-lg" href="#" role="button" onclick="toggleEmail()">Contact Us</a>
             </p>
-            <p id="emailDisplay"></p>
+            <div id="emailContainer" style="display: none;">
+                <span id="emailDisplay"></span>
+                <button class="btn btn-sm btn-secondary ml-2" onclick="copyEmail()">Copy</button>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
         function toggleEmail() {
+            var emailContainer = document.getElementById("emailContainer");
             var emailDisplay = document.getElementById("emailDisplay");
             if (emailDisplay.innerHTML === "") {
                 emailDisplay.innerHTML = "sivilsmetalrecycling@gmail.com";
+                emailContainer.style.display = "inline";
             } else {
                 emailDisplay.innerHTML = "";
+                emailContainer.style.display = "none";
             }
+        }
+
+        function copyEmail() {
+            var emailDisplay = document.getElementById("emailDisplay");
+            var tempInput = document.createElement("input");
+            tempInput.value = emailDisplay.innerHTML;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Email copied to clipboard!");
         }
     </script>
 </body>

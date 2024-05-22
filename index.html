@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Sivils Inc.</title>
-  </head>
-  <body>
+</head>
+<body>
     <nav>
         <h4>Sivils Core Buying and Metal Recycling</h4>
         <!-- <ul>
             <li><a href="/">menu option 1</a></li>
             <li><a href="/">menu option 2</a></li>
             <li><a href="/">menu option 3</a></li>
-            
         </ul> -->
     </nav>
     <div class="container mt-4">
         <div class="jumbotron">
             <h1 class="display-4">About Us</h1>
             <br>
-            <p class="lead">Sivils Core Buying and Metal Recycling is a family-owned and operated metal recycling service working in the central Texas area. We primarily provide scrap metal pickup services to automotive and HVAC industries. </p>
+            <p class="lead">Sivils Core Buying and Metal Recycling is a family-owned and operated metal recycling service working in the central Texas area. We primarily provide scrap metal pickup services to automotive and HVAC industries.</p>
             <hr class="my-4">
             <p>If you or your company is interested in working with us, please reach out and provide your name, company name, phone number, and the type and amount of metal that you want to buy/sell.</p>
             <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Contact Us</a>
+                <a class="btn btn-primary btn-lg" href="#" role="button" onclick="toggleEmail()">Contact Us</a>
             </p>
+            <p id="emailDisplay"></p>
         </div>
     </div>
-    
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        function toggleEmail() {
+            var emailDisplay = document.getElementById("emailDisplay");
+            if (emailDisplay.innerHTML === "") {
+                emailDisplay.innerHTML = "sivilsmetalrecycling@gmail.com";
+            } else {
+                emailDisplay.innerHTML = "";
+            }
+        }
+    </script>
+</body>
 </html>
